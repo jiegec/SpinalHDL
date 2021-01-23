@@ -147,7 +147,7 @@ abstract class BitVector extends BaseType with Widthable {
 
   /**
     * Resize the bitVector to width
-    * @example{{{ val res = myBits.resize(10) }}}
+    * @example {{{ val res = myBits.resize(10) }}}
     * @return a resized bitVector
     */
   def resize(width: Int): BitVector
@@ -195,7 +195,7 @@ abstract class BitVector extends BaseType with Widthable {
   }
 
   /**
-    * Take lowerst n bits
+    * Take lowest n bits
     * @example {{{ val res = data10bits.take(4) }}}
     * @return data10bits(3 downto 0)
     */
@@ -207,7 +207,7 @@ abstract class BitVector extends BaseType with Widthable {
   def takeLow(n: Int): Bits = take(n)
 
   /**
-    * Drop lowerst n bits
+    * Drop lowest n bits
     * @example {{{ val res = data10bits.drop(4) }}}
     * @return data10bits(9 downto 4)
     */
@@ -378,31 +378,31 @@ abstract class BitVector extends BaseType with Widthable {
   def getAllTrue: this.type
   /**
     * Return the bit at index bitId
-    * @example{{{ val myBool = myBits(3) }}}
+    * @example {{{ val myBool = myBits(3) }}}
     */
   def apply(bitId: Int): Bool
 
   /**
     * Return the bit at index bitId
-    * @example{{{ val myBool = myBits(myUInt) }}}
+    * @example {{{ val myBool = myBits(myUInt) }}}
     */
   def apply(bitId: UInt): Bool
 
   /**
     * Return a range of bits at offset and of width bitCount
-    * @example{{{ val myBool = myBits(3, 2 bits) }}}
+    * @example {{{ val myBool = myBits(3, 2 bits) }}}
     */
   def apply(offset: Int, bitCount: BitCount): this.type
 
   /**
     * Return a range of bits at offset and of width bitCount
-    * @example{{{ val myBool = myBits(myUInt, 2 bits) }}}
+    * @example {{{ val myBool = myBits(myUInt, 2 bits) }}}
     */
   def apply(offset: UInt, bitCount: BitCount): this.type
 
   /**
     * Return a range of bits
-    * @example{{{ val myBool = myBits(3 downto 1) }}}
+    * @example {{{ val myBool = myBits(3 downto 1) }}}
     */
   def apply(range: Range): this.type = this.apply(range.low, range.high - range.low + 1 bits)
 

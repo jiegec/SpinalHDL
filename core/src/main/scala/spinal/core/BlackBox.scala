@@ -30,7 +30,7 @@ import scala.collection.mutable.{ArrayBuffer, LinkedHashSet}
 /**
   * Create a generic for a BlackBox
   *
-  * @example{{{
+  * @example {{{
   *    class myMemory(sizeMem: Int) extends BlackBox{
   *        val generic = new Generic{
   *         val size = sizeMem
@@ -49,7 +49,7 @@ case class GenericValue(e : Expression) extends SpinalTag
   * A blackbox allows the user to integrate an existing VHDL/Verilog component into the design by just specifying
   * the interfaces.
   *
-  * @example{{{
+  * @example {{{
   *    class Ram_1w_1r(wordWidth: Int, wordCount: Int) extends BlackBox {
   *        val generic = new Generic {
   *            val wordCount = Ram_1w_1r.this.wordCount

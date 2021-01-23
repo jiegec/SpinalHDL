@@ -307,7 +307,7 @@ object native extends SpinalEnumEncoding{
 
 /**
   * Binary Sequential
-  * @example{{{ 000, 001, 010, 011, 100, 101, .... }}}
+  * @example {{{ 000, 001, 010, 011, 100, 101, .... }}}
   */
 object binarySequential extends SpinalEnumEncoding{
   override def getWidth(enum: SpinalEnum): Int = log2Up(enum.elements.length)
@@ -320,7 +320,7 @@ object binarySequential extends SpinalEnumEncoding{
 
 /**
   * Binary One hot encoding
-  * @example{{{ 001, 010, 100 }}}
+  * @example {{{ 001, 010, 100 }}}
   */
 object binaryOneHot extends SpinalEnumEncoding{
   override def getWidth(enum: SpinalEnum): Int = enum.elements.length

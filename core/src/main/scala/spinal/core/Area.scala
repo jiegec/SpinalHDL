@@ -33,7 +33,7 @@ import spinal.idslplugin.PostInitCallback
   * For this kind of cases you can use Area to define a group of signals/logic.
   *
   * @example {{{
-  *     val tickConter = new Area{
+  *     val tickCounter = new Area{
   *       val tick = Reg(UInt(8 bits) init(0)
   *       tick := tick + 1
   *     }
@@ -75,7 +75,7 @@ trait Area extends Nameable with ContextUser with OwnableRef with ScalaLocated w
 
 
 /**
-  * Create an Area which can be assign to a data
+  * Create an Area which can be assigned to a data
   *
   * @example {{{
   *     class Counter extends ImplicitArea[UInt]{
@@ -114,7 +114,7 @@ class ClockingArea(val clockDomain: ClockDomain) extends Area with PostInitCallb
 
 
 /**
-  * Clock Area with a specila clock enable
+  * Clock Area with a special clock enable
   */
 class ClockEnableArea(clockEnable: Bool) extends Area with PostInitCallback {
 

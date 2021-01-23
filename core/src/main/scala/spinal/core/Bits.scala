@@ -57,7 +57,7 @@ class Bits extends BitVector with DataPrimitives[Bits] with BitwiseOp[Bits]{
 
   /**
     * Concatenation between two Bits
-    * @example{{{ val myBits2 = bits1 ## bits2 }}}
+    * @example {{{ val myBits2 = bits1 ## bits2 }}}
     * @param right a Bits to append
     * @return a new Bits of width (w(this) + w(right))
     */
@@ -71,7 +71,7 @@ class Bits extends BitVector with DataPrimitives[Bits] with BitwiseOp[Bits]{
 
   /**
     * Logical shift right (output width will decrease)
-    * @example{{{ val result = myBits >> 4 }}}
+    * @example {{{ val result = myBits >> 4 }}}
     * @param that the number of shift
     * @return a Bits of width : w(this) - that bits
     */
@@ -79,7 +79,7 @@ class Bits extends BitVector with DataPrimitives[Bits] with BitwiseOp[Bits]{
 
   /**
     * Logical shift left (output width will increase)
-    * @example{{{ val result = myBits << 4 }}}
+    * @example {{{ val result = myBits << 4 }}}
     * @param that the number of shift
     * @return a Bits of width : w(this) + that bits
     */
@@ -92,7 +92,7 @@ class Bits extends BitVector with DataPrimitives[Bits] with BitwiseOp[Bits]{
 
   /**
     * Logical shift right (output width == input width)
-    * @example{{{ val result = myBits |>> 4 }}}
+    * @example {{{ val result = myBits |>> 4 }}}
     * @param that the number of shift
     * @return a Bits of width : w(this)
     */
@@ -118,7 +118,7 @@ class Bits extends BitVector with DataPrimitives[Bits] with BitwiseOp[Bits]{
 
   /**
     * Assign a range value to a Bits
-    * @example{{{ core.io.interrupt = (0 -> uartCtrl.io.interrupt, 1 -> timerCtrl.io.interrupt, default -> false)}}}
+    * @example {{{ core.io.interrupt = (0 -> uartCtrl.io.interrupt, 1 -> timerCtrl.io.interrupt, default -> false)}}}
     * @param rangesValue The first range value
     * @param _rangesValues Others range values
     */
@@ -154,7 +154,7 @@ class Bits extends BitVector with DataPrimitives[Bits] with BitwiseOp[Bits]{
 
   /**
     * Cast a Bits to a given data type
-    * @example{{{ val myUInt = myBits.toDataType(UInt) }}}
+    * @example {{{ val myUInt = myBits.toDataType(UInt) }}}
     * @param dataType the wanted data type
     * @return a new data type assign with the value of Bits
     */

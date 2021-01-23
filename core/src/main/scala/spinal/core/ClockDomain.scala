@@ -352,7 +352,7 @@ case class ClockDomain(clock       : Bool,
   def newSlowedClockDomain(freq: HertzNumber): ClockDomain = {
     val currentFreq = ClockDomain.current.frequency.getValue.toBigDecimal
     freq match {
-      case x if x.toBigDecimal > currentFreq => SpinalError("To high frequancy")
+      case x if x.toBigDecimal > currentFreq => SpinalError("To high frequency")
       case x                                 => newClockDomainSlowedBy((currentFreq/freq.toBigDecimal).toBigInt)
     }
   }

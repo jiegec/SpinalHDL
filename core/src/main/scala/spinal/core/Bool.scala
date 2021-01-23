@@ -56,7 +56,7 @@ class Bool extends BaseType with DataPrimitives[Bool] with BitwiseOp[Bool]{
 
   /**
     * Logical AND
-    * @example{{{ val result = myBool1 && myBool2 }}}
+    * @example {{{ val result = myBool1 && myBool2 }}}
     * @return a Bool assign with the AND result
     */
   def &&(b: Bool): Bool = wrapLogicalOperator(b, new Operator.Bool.And)
@@ -64,7 +64,7 @@ class Bool extends BaseType with DataPrimitives[Bool] with BitwiseOp[Bool]{
 
   /**
     * Logical OR
-    * @example{{{ val result = myBool1 || myBool2 }}}
+    * @example {{{ val result = myBool1 || myBool2 }}}
     * @return a Bool assign with the OR result
     */
   def ||(b: Bool): Bool = wrapLogicalOperator(b, new Operator.Bool.Or)
@@ -74,7 +74,7 @@ class Bool extends BaseType with DataPrimitives[Bool] with BitwiseOp[Bool]{
 
   /**
     * Logical NOT
-    * @example{{{ val result = !myBool1 }}}
+    * @example {{{ val result = !myBool1 }}}
     * @return a Bool assign with the NOT result
     */
   def unary_! : Bool = wrapUnaryOperator(new Operator.Bool.Not)
@@ -88,7 +88,7 @@ class Bool extends BaseType with DataPrimitives[Bool] with BitwiseOp[Bool]{
 
   /**
     * this is assigned to True when cond is True
-    * @example{{{ myBool.setWhen(cond) }}}
+    * @example {{{ myBool.setWhen(cond) }}}
     * @param cond a Bool condition
     * @return this is assigned to True when cond is True
     */
@@ -98,7 +98,7 @@ class Bool extends BaseType with DataPrimitives[Bool] with BitwiseOp[Bool]{
 
   /**
     * Rising edge detection of this with an initial value
-    * @example{{{ val res = myBool.rise(False) }}}
+    * @example {{{ val res = myBool.rise(False) }}}
     * @param initAt the initial value
     * @return a Bool
     */
@@ -108,7 +108,7 @@ class Bool extends BaseType with DataPrimitives[Bool] with BitwiseOp[Bool]{
 
   /**
     * Falling edge detection of this with an initial value
-    * @example{{{ val res = myBool.fall(False) }}}
+    * @example {{{ val res = myBool.fall(False) }}}
     * @param initAt the initial value
     * @return a Bool
     */
@@ -118,7 +118,7 @@ class Bool extends BaseType with DataPrimitives[Bool] with BitwiseOp[Bool]{
 
   /**
     * Edge detection of this with an initial value
-    * @example{{{ val res = myBool.edge(False) }}}
+    * @example {{{ val res = myBool.edge(False) }}}
     * @param initAt the initial value
     * @return a Bool
     */
@@ -127,8 +127,8 @@ class Bool extends BaseType with DataPrimitives[Bool] with BitwiseOp[Bool]{
   def edge(): Bool = this ^ RegNext(this)
 
   /**
-    * Detect all edges (falling, rising, toogling)
-    * @example{{{
+    * Detect all edges (falling, rising, toggling)
+    * @example {{{
     *         val res = myBool.edges()
     *         when(res.fall){...}
     *         when(res.rise){...}
@@ -148,7 +148,7 @@ class Bool extends BaseType with DataPrimitives[Bool] with BitwiseOp[Bool]{
     ret
   }
 
-  /** Edge detection without intial value */
+  /** Edge detection without initial value */
   def edges(): BoolEdges = {
     val ret = BoolEdges()
     val old = RegNext(this)
@@ -173,21 +173,21 @@ class Bool extends BaseType with DataPrimitives[Bool] with BitwiseOp[Bool]{
 
   /**
     * Cast a Bool to an UInt
-    * @example{{{ myUInt := myBool.asUInt }}}
+    * @example {{{ myUInt := myBool.asUInt }}}
     * @return an UInt data
     */
   def asUInt: UInt = asBits.asUInt
 
   /**
     * Cast a Bool to an SInt
-    * @example{{{ mySInt := myBool.asSInt }}}
+    * @example {{{ mySInt := myBool.asSInt }}}
     * @return a SInt data
     */
   def asSInt: SInt = asBits.asSInt
 
   /**
     * Cast a Bool to an UInt of a given width
-    * @example{{{ myUInt := myBool.asUInt(8 bits) }}}
+    * @example {{{ myUInt := myBool.asUInt(8 bits) }}}
     * @param bitCount the width of the UInt
     * @return an UInt data of a given length initialize to this
     */

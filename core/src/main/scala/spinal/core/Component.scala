@@ -276,14 +276,14 @@ abstract class Component extends NameableByComponent with ContextUser with Scala
   /**
     * Return the path of the parent
     *
-    * @example{{{ toplevel/[myComponent1] // Current component is myComponent2 }}}
+    * @example {{{ toplevel/[myComponent1] // Current component is myComponent2 }}}
     */
   def getParentsPath(sep: String = "/"): String = if (parent == null) "" else parents().map(_.getDisplayName()).reduce(_ + sep + _)
 
   /**
     * Return the path of the component
     *
-    * @example{{{ toplevel/[myComponent1]/[myComponent2] // Current component is myComponent2 }}}
+    * @example {{{ toplevel/[myComponent1]/[myComponent2] // Current component is myComponent2 }}}
     */
   def getPath(sep: String = "/"): String = (if (parent == null) "" else getParentsPath(sep) + sep) + this.getDisplayName()
 

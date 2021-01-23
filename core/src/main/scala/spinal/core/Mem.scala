@@ -170,7 +170,7 @@ class Mem[T <: Data](val wordType: HardType[T], val wordCount: Int) extends Decl
               case literal: EnumLiteral[_]   => elements(elementId).asInstanceOf[SpinalEnumCraft[_]].encoding.getValue(literal.enum)
               case literal: BitVectorLiteral => {
                 if(literal.minimalValueBitWidth > width)
-                  SpinalError(s"MEM_INIT error, literal at intex $elementId is too big. 0x${literal.getValue().toString(16).toUpperCase()} => ${literal.minimalValueBitWidth} bits (more than $width bits)")
+                  SpinalError(s"MEM_INIT error, literal at index $elementId is too big. 0x${literal.getValue().toString(16).toUpperCase()} => ${literal.minimalValueBitWidth} bits (more than $width bits)")
                 literal.getValue()
               }
               case literal: Literal          => literal.getValue()
@@ -185,7 +185,7 @@ class Mem[T <: Data](val wordType: HardType[T], val wordCount: Int) extends Decl
       this.initialContent(wordIndex) = builder
     }
 //    for((e,i) <- this.initialContent.zipWithIndex){
-//      if(e.bitLength > width) SpinalError(s"MEM_INIT error, literal at intex $i is too big (> $width bits). 0x${e.toString(16).toUpperCase()} => ${e.bitLength} bits ")
+//      if(e.bitLength > width) SpinalError(s"MEM_INIT error, literal at index $i is too big (> $width bits). 0x${e.toString(16).toUpperCase()} => ${e.bitLength} bits ")
 //    }
     this
   }
@@ -572,7 +572,7 @@ class MemReadSync() extends MemPortStatement with WidthProvider with SpinalTagRe
 //  }
 //
 //  def sameAddressThan(write: MemWrite): Unit = {
-//    //Used by backed to symplify
+//    //Used by backed to simplify
 //    this.setInput(MemReadSync.getAddressId,write.getAddress)
 //  }
 

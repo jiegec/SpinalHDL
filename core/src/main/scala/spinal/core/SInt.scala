@@ -36,7 +36,7 @@ trait SIntFactory{
 /**
   * The SInt type corresponds to a vector of bits that can be used for signed integer arithmetic.
   *
-  * @example{{{
+  * @example {{{
   *     val mySInt = SInt(8 bits)
   *     mySInt    := S(4, 8 bits) + S"0000_1111"
   *     mySInt    := S(4) - S"h1A"
@@ -64,7 +64,7 @@ class SInt extends BitVector with Num[SInt] with MinMaxProvider with DataPrimiti
 
   /**
     * Concatenation between two SInt
-    * @example{{{ val mySInt = sInt1 @@ sInt2 }}}
+    * @example {{{ val mySInt = sInt1 @@ sInt2 }}}
     * @param that an SInt to append
     * @return a new SInt of width (width(this) + width(right))
     */
@@ -101,7 +101,7 @@ class SInt extends BitVector with Num[SInt] with MinMaxProvider with DataPrimiti
   def sign: Bool = this.msb
   /**
     * SInt symmetric
-    * @example{{{ val symmetrySInt = mySInt.symmetry }}}
+    * @example {{{ val symmetrySInt = mySInt.symmetry }}}
     * @return return a SInt which minValue equal -maxValue
     */
   def symmetry: SInt = {
@@ -158,8 +158,8 @@ class SInt extends BitVector with Num[SInt] with MinMaxProvider with DataPrimiti
 
   /**
     * SInt ceil
-    * @example{{{ val mySInt = SInt(w bits).ceil }}}
-    * @param  n : ceil lowerest n bit
+    * @example {{{ val mySInt = SInt(w bits).ceil }}}
+    * @param  n : ceil lowest n bit
     * @return a new SInt of width (w - n + 1)
     */
   override def ceil(n: Int, align: Boolean = true): SInt = {
@@ -405,14 +405,14 @@ class SInt extends BitVector with Num[SInt] with MinMaxProvider with DataPrimiti
 
   /**
     * Negative number
-    * @example{{{ val result = -mySInt }}}
+    * @example {{{ val result = -mySInt }}}
     * @return return a negative number
     */
   def unary_- : SInt = wrapUnaryOperator(new Operator.SInt.Minus)
 
   /**
     * Logical shift Right (output width == input width)
-    * @example{{{ val result = mySInt >> myUIntShift }}}
+    * @example {{{ val result = mySInt >> myUIntShift }}}
     * @param that the number of right shift
     * @return a Bits of width : w(this)
     */
@@ -448,7 +448,7 @@ class SInt extends BitVector with Num[SInt] with MinMaxProvider with DataPrimiti
 
   /**
     * Assign a range value to a SInt
-    * @example{{{ core.io.interrupt = (0 -> uartCtrl.io.interrupt, 1 -> timerCtrl.io.interrupt, default -> false)}}}
+    * @example {{{ core.io.interrupt = (0 -> uartCtrl.io.interrupt, 1 -> timerCtrl.io.interrupt, default -> false)}}}
     * @param rangesValue The first range value
     * @param _rangesValues Others range values
     */

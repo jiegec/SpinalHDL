@@ -175,7 +175,7 @@ abstract class MultiData extends Data {
   def elementsString = this.elements.map(_.toString()).reduce(_ + "\n" + _)
 
   private[core] def zippedMap[T](that: MultiData, task: (Data, Data) => T): Seq[T] = {
-    if (that.elements.length != this.elements.length) SpinalError(s"Can't zip [$this] with [$that]  because they don't have the same number of elements.\nFirst one has :\n${this.elementsString}\nSeconde one has :\n${that.elementsString}\n")
+    if (that.elements.length != this.elements.length) SpinalError(s"Can't zip [$this] with [$that]  because they don't have the same number of elements.\nFirst one has :\n${this.elementsString}\nSecond one has :\n${that.elementsString}\n")
     this.elements.map(x => {
       val (n, e) = x
       val other = that.find(n)
